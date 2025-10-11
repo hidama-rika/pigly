@@ -96,7 +96,6 @@ view ファイルの作成
 ![table2](pigly-weight_target.png)
 ![table3](pigly-weight_logs.png)
 
-
 ## ER 図
 
 ![ER図](er-diagram.png)
