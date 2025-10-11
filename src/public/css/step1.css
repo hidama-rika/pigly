@@ -1,0 +1,145 @@
+.register-container {
+    background-color: #FFFFFF;
+    text-align: center;
+    width: 580px;
+    height: 741px;
+    top: 130px;
+    left: 466px;
+    border-radius: 24px;
+    padding: 40px;
+
+    /* 子要素（ロゴからリンクまで）を縦に並べるためのflex設定 */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 195px;
+    height: 132px;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.logo {
+    font-family: "Lora", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 60px;
+    line-height: 100%;
+    letter-spacing: 10%;
+    color: #EC87EF;
+    width: 188px;
+    height: 77px
+}
+
+.page-title {
+    display: flex;
+    justify-content: center;
+    font-family: "Shippori Mincho", serif;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 30px;
+    line-height: 100%;
+    letter-spacing: 10%;
+    color: #333333;
+    margin-bottom: 20px;
+}
+
+.step-info {
+    /* STEP1 の文字スタイル */
+    font-size: 16px;
+    font-weight: 300;
+    color: #333333;
+    margin-bottom: 25px;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-align: center;
+    width: 500px;
+    height: 24px;
+}
+
+.form-group {
+    text-align: left;
+    margin-bottom: 50px;
+    width: 500px;
+    height: 77px;
+    color: #333333;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    font-size: 16px;
+    color: #333333;
+    margin-bottom: 5px;
+}
+
+.form-control {
+    width: 500px;
+    height: 43px;
+    padding: 11px 10px;
+    color: #333333;
+    border: 1px solid #E0DFDE;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+.form-control:hover {
+    border-color: #A3A6E1;
+    border-width: 3px;
+}
+
+.next-btn {
+    /* 次に進むボタンのグラデーションとスタイル */
+    width: 250px;
+    height: 50px;
+    padding: 10px;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #FFFFFF;
+    cursor: pointer;
+    background: linear-gradient(to right, #A3A6E1, #FFABD9);
+    /* 青紫からピンクへのグラデーション */
+    transition: opacity 0.3s;
+}
+
+.next-btn:hover {
+    opacity: 0.9;
+    box-shadow: 0 10px 15px -3px rgba(139, 92, 246, 0.5);
+}
+
+.login-link {
+    /* ログインはこちら のリンクスタイル */
+    width: 128px;
+    height: 24px;
+    display: block;
+    margin-top: 25px;
+    font-family: "Shippori Mincho", serif;
+    font-weight: 300;
+    font-size: 16px;
+    color: #2C99FF;
+    border-bottom: 1px solid #2C99FF;
+    text-decoration: none;
+    gap: 10px;
+
+}
+
+.login-link:hover {
+    text-decoration: underline;
+}
+
+.register-form__error-message {
+    color: #e53935;
+    font-size: 14px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}

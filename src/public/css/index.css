@@ -1,0 +1,662 @@
+/* メインコンテンツ */
+.main-content {
+    background: #F9F9F9;
+    width: 1512px;
+    height: 1145px;
+    padding: 70px 196px;
+    margin-top: 71px;
+}
+
+.message-title {
+    font-weight: 700;
+}
+
+.message-text {
+    font-size: 14px;
+}
+
+
+/* サマリーカードセクション */
+.summary-container {
+    width: 100%;
+    max-width: 1120px;
+    height: 154px;
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    margin-bottom: 32px;
+    overflow: hidden;
+}
+
+.summary-grid {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.summary-card {
+    flex-basis: 33.333%;
+    /* 3分の1の幅 */
+    text-align: center;
+    padding: 24px 16px;
+    position: relative;
+}
+
+/* 縦の区切り線（右ボーダーを使用） */
+.summary-card:not(.last-card)::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 25%;
+    /* 上端からの開始位置 */
+    bottom: 25%;
+    /* 下端からの終了位置 */
+    width: 1px;
+    background-color: #CDCDCD;
+}
+
+.summary-card-container {
+    width: 230px;
+    height: 94px;
+    text-align: center;
+    align-items: center;
+}
+
+.card-label {
+    color: #333333;
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 4px;
+    margin-left: -60px;
+}
+
+.card-value {
+    font-size: 50px;
+    font-weight: 800;
+    line-height: 1;
+}
+
+.card-unit {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.summary-card.pink .card-value {
+    color: #db2777;
+}
+
+.summary-card.indigo .card-value {
+    color: #4f46e5;
+}
+
+.summary-card.gray .card-value {
+    color: #1f2937;
+}
+
+
+/* データ一覧セクション */
+.data-section {
+    background-color: #FFFFFF;
+    padding: 16px;
+    max-width: 1120px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+}
+
+/* フィルタリングとボタン */
+.filter-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+    gap: 16px;
+    max-width: 1120px;
+    height: 45px;
+}
+
+.filter-inputs-group {
+    display: flex;
+    gap: 10px;
+    width: 654px;
+    height: 43px;
+    align-items: center;
+}
+
+.filter-inputs-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: nowrap;
+    width: 654px;
+    height: 43px;
+}
+
+.form-input {
+    border: 1px solid #E0DFDE;
+    padding: 8px 12px;
+    font-size: 14px;
+    width: 200px;
+    height: 43px;
+    box-sizing: border-box;
+}
+
+.form-input::placeholder {
+    color: #E0DFDE;
+}
+
+.form-input:hover {
+    border-color: #A3A6E1;
+    border-width: 3px;
+}
+
+.search-btn {
+    background-color: #919191;
+    color: #FFFFFF;
+    padding: 9.5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.15s ease-in-out;
+    font-size: 16px;
+    font-weight: 300;
+    width: 100px;
+    height: 43px;
+}
+
+.search-btn:hover {
+    background-color: #333333;
+}
+
+.reset-btn {
+    background-color: #FFFFFF;
+    color: #919191;
+    border: 1px solid #919191;
+    padding: 9.5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.15s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: 300;
+    width: 100px;
+    height: 43px;
+}
+
+.add-data-btn {
+    background: linear-gradient(to right, #A3A6E1, #FFABD9);
+    color: #FFFFFF;
+    padding: 7.5px 10px;
+    border-radius: 12px;
+    transition: background-color 0.15s ease-in-out;
+    width: 160px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 100%;
+    letter-spacing: 0%;
+}
+
+.add-data-btn:hover {
+    opacity: 0.9;
+    box-shadow: 0 10px 15px -3px rgba(139, 92, 246, 0.5), 0 4px 6px -4px rgba(139, 92, 246, 0.3);
+}
+
+
+/* テーブルスタイル */
+
+.data-table {
+    min-width: 100%;
+    border-collapse: collapse;
+}
+
+.data-table thead {
+    /* 従来のボーダーを無効化（またはtransparentにする） */
+    border-bottom: none;
+}
+
+.data-table thead tr {
+    background-color: #FFFFFF;
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: 600;
+    color: #333333;
+    letter-spacing: 0.05em;
+}
+
+/* テーブルヘッダーセル (th) のスタイルを修正 */
+.data-table th {
+    text-align: left;
+    /* パディングを変更: <th>の下部にグラデーションが入るよう、下部のパディングを増やします */
+    padding: 1rem 0.75rem 1.25rem 0.75rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #333333;
+
+    /* --- ここにグラデーション下線の設定を移動 --- */
+    position: relative;
+    /* 子要素のグラデーション位置指定の基準にする */
+
+    /* グラデーションを背景画像として設定 */
+    background-image: linear-gradient(90deg, #A3A6E1 0%, #FFABD9 100%);
+
+    /* 背景のサイズを設定（幅100%、高さ1px）*/
+    background-size: 100% 1px;
+
+    /* 背景の繰り返しを無効化 */
+    background-repeat: no-repeat;
+
+    /* 背景を下端に配置することで下線のように見せる */
+    background-position: bottom;
+}
+
+.data-table tbody {
+    background-color: #FFFFFF;
+    font-size: 16px;
+}
+
+.data-table tbody tr {
+    border-bottom: 1px solid #F7F7F7;
+    height: 70px;
+    transition: background-color 0.15s ease-in-out;
+}
+
+.data-table tbody tr:hover {
+    background-color: #F7F7F7;
+}
+
+.data-table td {
+    padding: 16px 24px;
+    white-space: nowrap;
+}
+
+.data-table .text-right {
+    text-align: right;
+}
+
+.edit-btn {
+    transition: color 0.15s ease-in-out;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.edit-btn:hover {
+    opacity: 0.9;
+    transform: translateY(-5px);
+}
+
+.icon {
+    width: 20px;
+    height: 20px;
+}
+
+.edit-btn .icon {
+    width: 16px;
+    height: 16px;
+}
+
+/* 1. モーダルトグル用のチェックボックスは完全に非表示にする */
+#modal-toggle {
+    display: none;
+}
+
+/* 2. モーダルオーバーレイの基本設定（非表示状態） */
+.modal-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1512px;
+    height: 1216px;
+    background-color: rgba(0, 0, 0, 0.6);
+    visibility: hidden;
+    /* 初期状態は非表示 */
+    opacity: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    transition: opacity 0.3s, visibility 0.3s;
+    overflow-y: auto;
+    /* オーバーレイ自体がスクロール可能 */
+    padding: 20px;
+}
+
+/* 3. チェックボックスがONになったらモーダルを表示 */
+#modal-toggle:checked~.modal-overlay {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* 4. モーダルコンテンツの基本的なスタイル（既存のindex.cssに合わせて調整） */
+.modal-content {
+    position: absolute;
+    top: 20px;
+    bottom: 20px;
+    background-color: #FFFFFF;
+    padding: 2rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    /* 初期アニメーション */
+    transform: scale(0.95);
+    transition: transform 0.3s ease-out;
+    width: 700px;
+    height: 1076px;
+    overflow-y: auto;
+    /* 画面の高さより少し小さく固定し、必ず中央に配置されるようにする */
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+
+/* 5. チェックボックスがONになったらコンテンツをスケールアップして表示 */
+#modal-toggle:checked~.modal-overlay .modal-content {
+    transform: scale(1);
+}
+
+/* フォームが入っているエリア - スクロールはオーバーレイに任せるため、内部スクロールは不要 */
+.modal-form-area {
+    flex-grow: 1;
+    /* 内部スクロールを無効化 */
+    overflow-y: visible;
+    padding: 0 2rem 1rem 2rem;
+}
+
+.modal-form-group {
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.form-title {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.required {
+    background-color: #e53935;
+    color: #fff;
+    font-size: 12px;
+    font-weight: normal;
+    padding: 2px 5px;
+    gap: 10px;
+    border-radius: 4px;
+}
+
+.error-text {
+    color: #e53935;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+/* -------------------- 日付入力のカスタマイズ (今回の最重要修正部分) -------------------- */
+
+.date-input-wrapper {
+    position: relative;
+    width: 100%;
+    height: 43px;
+}
+
+/* 1. 本来の input[type="date"] (カレンダーピッカー起動用) */
+.date-picker-hidden {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    z-index: 10;
+
+    /* ブラウザの標準外観をリセット */
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+
+    /* **重要**: opacityを0.01にして、フォーカス時に枠線が見えないようにする */
+    opacity: 0.01;
+    background-color: transparent;
+
+    /* **重要**: 文字色を完全に透明にして、ブラウザのデフォルト日付表示（2024-01-01など）を隠す */
+    color: transparent;
+}
+
+/* Webkit系ブラウザ (Chrome/Safari) のドロップダウンアイコンを完全に非表示にする */
+.date-picker-hidden::-webkit-calendar-picker-indicator {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    color: transparent;
+    /* アイコンの色を透明に */
+    cursor: pointer;
+    opacity: 0;
+    /* 完全に透明 */
+    z-index: 10;
+    /* 最前面に維持 */
+}
+
+/* 2. Y年m月d日を表示するオーバーレイ（見た目を担当） */
+.date-display-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 11px;
+    background-color: #FFFFFF;
+
+    /* **重要**: クリック操作は裏側の input[type="date"] に任せる */
+    pointer-events: none;
+    z-index: 5;
+
+    border: 1px solid #E0DFDE;
+    border-radius: 5px;
+    color: #333333;
+    font-size: 16px;
+}
+
+.date-input-wrapper:hover .date-display-overlay {
+    border-color: #A3A6E1;
+    border-width: 3px;
+}
+
+/* プレースホルダーのスタイル（日付が設定されていないとき） */
+.placeholder {
+    color: #CDCDCD;
+}
+
+.drop-icon {
+    font-size: 1.2em;
+    color: #CDCDCD;
+    padding-top: 2px;
+    line-height: 1;
+}
+
+/* -------------------- 運動時間入力のカスタマイズ -------------------- */
+
+/* type="time" の時計アイコンを非表示にする */
+input[type="time"]::-webkit-calendar-picker-indicator {
+    /* Webkit (Chrome, Safari, Edge) のアイコンを非表示 */
+    display: none;
+    -webkit-appearance: none;
+}
+
+input[type="time"]::-moz-list-number-rtl {
+    /* Firefox */
+    display: none;
+}
+
+/* IE/Edge の 'X' ボタンを非表示にするためのカスタムスタイル (通常は不要だが念のため) */
+input[type="time"]::-ms-clear {
+    display: none;
+}
+
+/* ヘッダーとフッターは flex-shrink: 0 で固定 */
+.modal-header {
+    padding: 2rem 2rem 1rem 0rem;
+    flex-shrink: 0;
+}
+
+.modal-title {
+    width: 219px;
+    height: 36px;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: #333333;
+}
+
+
+.form-label {
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.modal-form-input {
+    width: 600px;
+    padding: 0.75rem;
+    border: 1px solid #E0DFDE;
+    border-radius: 0.375rem;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    margin-bottom: 30px;
+    color: #CDCDCD;
+}
+
+.modal-form-input:hover {
+    border-color: #A3A6E1;
+    border-width: 3px;
+}
+
+.modal-form-input select-input:hover {
+    border-color: #A3A6E1;
+    border-width: 3px;
+}
+
+textarea.modal-form-input {
+    width: 600px;
+    height: 160px;
+    padding: 0.75rem;
+    border: 1px solid #E0DFDE;
+    border-radius: 0.375rem;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    margin-bottom: 30px;
+    color: #CDCDCD;
+}
+
+input[type="time"]::placeholder {
+    color: #CDCDCD;
+    opacity: 1;
+    text-decoration: none;
+}
+
+/* ボタンスタイル  */
+.btn-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+}
+
+.btn-modal-primary {
+    background: linear-gradient(to right, #A3A6E1, #FFABD9);
+    color: #FFFFFF;
+    border-radius: 12px;
+    width: 200px;
+    height: 50px;
+    padding: 10px 20px;
+    font-weight: 600;
+    align-items: center;
+    transition: background-color 0.15s;
+}
+
+.btn-modal-primary:hover {
+    opacity: 0.9;
+    box-shadow: 0 10px 15px -3px rgba(139, 92, 246, 0.5), 0 4px 6px -4px rgba(139, 92, 246, 0.3);
+}
+
+.btn-modal-secondary {
+    background-color: #E0DFDE;
+    color: #333333;
+    border-radius: 12px;
+    width: 200px;
+    height: 50px;
+    text-decoration: none;
+    padding: 10px 20px;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.15s;
+}
+
+.btn-modal-secondary:hover {
+    opacity: 0.9;
+    box-shadow: 0 10px 15px -3px rgba(7, 6, 6, 0.493);
+}
+
+/* ページネーション */
+.pagination-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+/* ページネーションのリスト（ul） */
+.pagination {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* 各ページアイテム（li） */
+.pagination .page-item {
+    margin: 0 5px;
+}
+
+/* リンクとテキスト（a, span）の共通スタイル */
+.pagination .page-item a,
+.pagination .page-item span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 5px;
+    text-decoration: none;
+    color: #4B4B4B;
+    background-color: #fff;
+    transition: background-color 0.3s;
+}
+
+/* 現在のページ（アクティブ）のスタイル */
+.pagination .page-item.active span {
+    background-image: linear-gradient(to right, #A3A6E1, #FFABD9);
+    color: #FFFFFF;
+    font-weight: bold;
+}
+
+/* 無効化された（disabled）ボタンのスタイル */
+.pagination .page-item.disabled span {
+    color: #4B4B4B;
+    background-color: #FFFFFF;
+    border-color: #FFFFFF;
+    cursor: default;
+}
+
+/* ページリンクにホバーしたときのスタイル */
+.pagination .page-item a:hover {
+    background-color: #E0DFDE;
+}

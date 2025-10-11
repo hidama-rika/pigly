@@ -13,13 +13,14 @@ class CreateUsersTable extends Migration
      */
     public function up()
     {
+        // Fortifyの登録処理で使用する「users」テーブルを定義します。
+        // カラム定義は、共有いただいた画像（id, name, email, password, timestamps）に基づいています。
         Schema::create('users', function (Blueprint $table) {
+
             $table->id();
-            $table->string('name');
-            $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
-            $table->rememberToken();
+            $table->string('name', 255)->comment('お名前');
+            $table->string('email', 255)->unique()->comment('メールアドレス');
+            $table->string('password', 255)->comment('パスワード (ハッシュ値)');
             $table->timestamps();
         });
     }

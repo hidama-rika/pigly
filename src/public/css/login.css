@@ -1,0 +1,128 @@
+.login-container {
+    background-color: #FFFFFF;
+    text-align: center;
+    width: 580px;
+    height: 580px;
+    top: 130px;
+    left: 466px;
+    border-radius: 24px;
+    padding: 40px;
+
+    /* 子要素（ロゴからリンクまで）を縦に並べるためのflex設定 */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 195px;
+    height: 132px;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.logo {
+    font-family: "Lora", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 60px;
+    line-height: 100%;
+    letter-spacing: 10%;
+    color: #EC87EF;
+    width: 188px;
+    height: 77px
+}
+
+.form-title {
+    /* ログイン の文字スタイル */
+    display: flex;
+    justify-content: center;
+    font-family: "Shippori Mincho", serif;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 30px;
+    line-height: 100%;
+    letter-spacing: 10%;
+    color: #333333;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    text-align: left;
+    margin-bottom: 50px;
+    width: 500px;
+    height: 77px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    font-size: 16px;
+    color: #333333;
+    margin-bottom: 5px;
+}
+
+.form-control {
+    width: 500px;
+    height: 43px;
+    padding: 11px 10px;
+    border: 1px solid #E0DFDE;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+.form-control:hover {
+    border-color: #A3A6E1;
+    border-width: 3px;
+}
+
+.login-btn {
+    /* ログインボタンのグラデーションとスタイル */
+    width: 250px;
+    height: 50px;
+    padding: 10px;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #FFFFFF;
+    cursor: pointer;
+    background: linear-gradient(to right, #A3A6E1, #FFABD9);
+    transition: opacity 0.3s;
+}
+
+.login-btn:hover {
+    opacity: 0.9;
+    box-shadow: 0 10px 15px -3px rgba(139, 92, 246, 0.5);
+}
+
+.register-link {
+    /* アカウント作成はこちら のリンクスタイル */
+    width: 176px;
+    height: 24px;
+    display: block;
+    margin-top: 25px;
+    font-family: "Shippori Mincho", serif;
+    font-weight: 300;
+    font-size: 16px;
+    color: #2C99FF;
+    border-bottom: 1px solid #2C99FF;
+    text-decoration: none;
+    gap: 10px;
+}
+
+.register-link:hover {
+    text-decoration: underline;
+}
+
+.login-form__error-message {
+    color: #e53935;
+    font-size: 14px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}

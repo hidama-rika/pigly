@@ -1,0 +1,291 @@
+/*  メインコンテンツ  */
+.main-content {
+    background: #F9F9F9;
+    width: 1512px;
+    height: 968px;
+    margin-top: 71px;
+    padding: 70px 356px;
+    display: flex;
+    justify-content: center;
+}
+
+/* フォームカード */
+.log-card {
+    background-color: #FFFFFF;
+    padding: 30px 20px;
+    width: 800px;
+    height: 828px;
+    gap: 30px;
+}
+
+.card-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: #333333;
+    text-align: left;
+    top: 0;
+}
+
+/* フォームグループ */
+.form-group {
+    width: 760px;
+    height: 77px;
+    margin-bottom: 30px;
+}
+
+.input-label {
+    display: block;
+    text-align: left;
+    font-size: 14px;
+    font-weight: 600;
+    color: #333333;
+    margin-bottom: 6px;
+}
+
+/* 入力フィールド全般 */
+.form-input {
+    border: 1px solid #E0DFDE;
+    border-radius: 5px;
+    padding: 10px 11px;
+    font-size: 16px;
+    width: 760px;
+    height: 43px;
+    box-sizing: border-box;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.form-input:hover {
+    border-color: #A3A6E1;
+    border-width: 3px;
+}
+
+.date-input-wrapper:hover .date-display-overlay{
+    border-color: #A3A6E1;
+    border-width: 3px;
+}
+
+/* ユニット付き入力 (体重、カロリー) */
+.input-with-unit {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.input-with-unit .form-input {
+    flex-grow: 1;
+    width: auto;
+}
+
+.unit-text {
+    font-size: 16px;
+    font-weight: 500;
+    color: #333333;
+    width: 30px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* テキストエリア */
+.textarea-input {
+    resize: vertical;
+    width: 760px;
+    height: 160px;
+}
+
+/* ドロップダウンと時刻入力の調整 */
+.select-input,
+.time-input {
+    /* ブラウザのデフォルトスタイルを調整する場合があります */
+    display: flex;
+}
+
+.time-input {
+    max-width: 120px;
+    text-align: center;
+}
+
+.error-text {
+    color: #e53935;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+/* -------------------- 日付入力のカスタマイズ (今回の最重要修正部分) -------------------- */
+
+.date-input-wrapper {
+    position: relative;
+    width: 100%;
+    height: 43px;
+}
+
+/* 1. 本来の input[type="date"] (カレンダーピッカー起動用) */
+.date-picker-hidden {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    z-index: 10;
+
+    /* ブラウザの標準外観をリセット */
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+
+    /* **重要**: opacityを0.01にして、フォーカス時に枠線が見えないようにする */
+    opacity: 0.01;
+    background-color: transparent;
+
+    /* **重要**: 文字色を完全に透明にして、ブラウザのデフォルト日付表示（2024-01-01など）を隠す */
+    color: transparent;
+}
+
+/* Webkit系ブラウザ (Chrome/Safari) のドロップダウンアイコンを完全に非表示にする */
+.date-picker-hidden::-webkit-calendar-picker-indicator {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    color: transparent;
+    /* アイコンの色を透明に */
+    cursor: pointer;
+    opacity: 0;
+    /* 完全に透明 */
+    z-index: 10;
+    /* 最前面に維持 */
+}
+
+/* 2. Y年m月d日を表示するオーバーレイ（見た目を担当） */
+.date-display-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 11px;
+    background-color: #FFFFFF;
+
+    /* **重要**: クリック操作は裏側の input[type="date"] に任せる */
+    pointer-events: none;
+    z-index: 5;
+
+    border: 1px solid #E0DFDE;
+    border-radius: 5px;
+    color: #333333;
+    font-size: 16px;
+}
+
+/* プレースホルダーのスタイル（日付が設定されていないとき） */
+.placeholder {
+    color: #999999;
+    /* グレーアウト */
+}
+
+.drop-icon {
+    font-size: 1.2em;
+    color: #CDCDCD;
+    padding-top: 2px;
+    line-height: 1;
+}
+
+/* -------------------- 運動時間入力のカスタマイズ -------------------- */
+
+/* type="time" の時計アイコンを非表示にする */
+input[type="time"]::-webkit-calendar-picker-indicator {
+    /* Webkit (Chrome, Safari, Edge) のアイコンを非表示 */
+    display: none;
+    -webkit-appearance: none;
+}
+
+input[type="time"]::-moz-list-number-rtl {
+    /* Firefox */
+    display: none;
+}
+
+/* IE/Edge の 'X' ボタンを非表示にするためのカスタムスタイル (通常は不要だが念のため) */
+input[type="time"]::-ms-clear {
+    display: none;
+}
+
+/* -------------------- ボタンエリア -------------------- */
+
+.button-area {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    height: 50px;
+    margin-top: 140px;
+}
+
+/* 戻るボタン (ライトグレー) */
+.btn-back {
+    padding: 13px 10px;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    background-color: #E0DFDE;
+    color: #333333;
+    cursor: pointer;
+    width: 200px;
+    height: 50px;
+    margin-right: 10px;
+}
+
+.btn-back:hover {
+    opacity: 0.9;
+    box-shadow: 0 10px 15px -3px rgba(7, 6, 6, 0.493);
+}
+
+/* 更新ボタン (グラデーション) */
+.btn-update {
+    padding: 13px 10px;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #FFFFFF;
+    cursor: pointer;
+    background: linear-gradient(to right, #A3A6E1, #FFABD9);
+    transition: opacity 0.3s;
+    width: 200px;
+    height: 50px;
+}
+
+.btn-update:hover {
+    opacity: 0.9;
+    box-shadow: 0 10px 15px -3px rgba(139, 92, 246, 0.5);
+}
+
+/* 削除ボタン (ゴミ箱アイコン) */
+.btn-delete {
+    position: absolute;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #ef4444;
+    padding: 0;
+    margin-left: 710px;
+    margin-top: -40px;
+    border-radius: 8px;
+    padding: 5px;
+    width: 41px;
+    height: 44px;
+    transition: background-color 0.2s, color 0.2s, box-shadow 0.3s;
+}
+
+.btn-delete:hover {
+    opacity: 0.9;
+    transform: translateY(-5px);
+}
+
+.delete-icon {
+    width: 41px;
+    height: 44px;
+}
