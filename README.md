@@ -90,7 +90,7 @@ view ファイルの作成
 
     ・　JavaScript（モーダル画面）
 
-##　テーブル仕様書
+## テーブル仕様書
 
 ![table1](pigly-users.png)
 ![table2](pigly-weight_target.png)
